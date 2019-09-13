@@ -18,11 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Boomerang.Web\Boomerang.Web.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Properties\" />
+    <ProjectReference Include="..\..\src\Boomerang.Api\Boomerang.Api.csproj" />
   </ItemGroup>
 
 </Project>
