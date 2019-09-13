@@ -1,21 +1,41 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
 using Microsoft.AspNetCore.Mvc;
 
 namespace Boomerang.Api.Controllers
 {
-    [Route("[controller]")]
     [ApiController]
+    [Route("[controller]")]
     public class ClassesController : ControllerBase
     {
-        // GET api/values
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        private readonly ICollection<ClassModel> _repository;
+
+        public ClassesController(ICollection<ClassModel> repository)
         {
-            return new[]
-            {
-                "value1",
-                "value2"
-            };
+            _repository = repository;
         }
+
+        [HttpGet]
+        public ActionResult<string> Get()
+        {
+            return _repository.First().Description;
+        }
+
+        [HttpPost]
+        public IActionResult Post([FromBody] ClassModel model)
+        {
+            _repository.Add(model);
+
+            return Ok();
+        }
+    }
+
+    public class ClassModel
+    {
+        public string Description { get; set; }
+
+        public DateTime StartsAt { get; set; }
     }
 }

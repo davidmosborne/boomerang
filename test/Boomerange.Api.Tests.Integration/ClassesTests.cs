@@ -1,11 +1,14 @@
 ﻿using System;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+
 using FluentAssertions;
+
 using Microsoft.AspNetCore.Mvc.Testing;
+
 using Newtonsoft.Json;
+
 using Xunit;
 
 namespace Boomerang.Api.Tests.Integration
@@ -24,25 +27,40 @@ namespace Boomerang.Api.Tests.Integration
         public async Task Get_ExistingClass_ShouldReturnClass()
         {
             // Arrange
-            var client = _webApplicationFactory.CreateClient();
+            var client =
+                _webApplicationFactory.CreateClient(
+                    new WebApplicationFactoryClientOptions {BaseAddress = new Uri("https://localhost")});
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
             HttpResponseMessage response = null;
 
             try
             {
+                response =
+                    await client.PostAsJsonAsync(
+                        "classes",
+                        new
+                        {
+                            Description = "My Saturday Class",
+                            StartsAt = DateTime.UtcNow.ToString("O")
+                        });
+
+                response.EnsureSuccessStatusCode();
+
                 // Act
                 response = await client.GetAsync("classes");
 
+                var value = JsonConvert.DeserializeObject<string>(await response.Content.ReadAsStringAsync());
+
+                value.Should().Be("My Saturday Class");
+
                 // Assert
                 response.EnsureSuccessStatusCode(); // Status Code 200-299
-                
             }
             finally
             {
                 response?.Dispose();
             }
-            
         }
     }
 }
