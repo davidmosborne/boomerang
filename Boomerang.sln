@@ -14,9 +14,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boomerang.Api.Tests.Integration", "test\Boomerange.Api.Tests.Integration\Boomerang.Api.Tests.Integration.csproj", "{E29B1F70-3495-4FAE-AAC5-3CD7ECE6CC85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Boomerang.Api.Tests.Integration", "test\Boomerange.Api.Tests.Integration\Boomerang.Api.Tests.Integration.csproj", "{E29B1F70-3495-4FAE-AAC5-3CD7ECE6CC85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boomerang.Api", "src\Boomerang.Api\Boomerang.Api.csproj", "{08081FD1-3F6E-47A7-91F4-4E3505CC2E00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Boomerang.Api", "src\Boomerang.Api\Boomerang.Api.csproj", "{08081FD1-3F6E-47A7-91F4-4E3505CC2E00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boomerang.Api.Models", "src\Boomerang.Api.Models\Boomerang.Api.Models.csproj", "{9F0D551F-38FF-4894-A9CA-4BADB3FA6D1B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,6 +42,10 @@ Global
 		{08081FD1-3F6E-47A7-91F4-4E3505CC2E00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08081FD1-3F6E-47A7-91F4-4E3505CC2E00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08081FD1-3F6E-47A7-91F4-4E3505CC2E00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F0D551F-38FF-4894-A9CA-4BADB3FA6D1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F0D551F-38FF-4894-A9CA-4BADB3FA6D1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F0D551F-38FF-4894-A9CA-4BADB3FA6D1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F0D551F-38FF-4894-A9CA-4BADB3FA6D1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

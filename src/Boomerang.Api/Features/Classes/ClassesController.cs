@@ -4,7 +4,7 @@ using System.Linq;
 
 using Microsoft.AspNetCore.Mvc;
 
-namespace Boomerang.Api.Controllers
+namespace Boomerang.Api.Features.Classes
 {
     [ApiController]
     [Route("[controller]")]

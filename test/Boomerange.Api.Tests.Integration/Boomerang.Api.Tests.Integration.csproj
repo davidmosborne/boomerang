@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <Folder Include="Properties\" />
+    <ProjectReference Include="..\..\src\Boomerang.Api.Models\Boomerang.Api.Models.csproj" />
     <ProjectReference Include="..\..\src\Boomerang.Api\Boomerang.Api.csproj" />
   </ItemGroup>
 
